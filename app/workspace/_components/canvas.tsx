@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 const Canvas = ({ onSaveTrigger, fileId, fileData }: any) => {
   const [editor, setEditor] = useState<any>(null);
   const convex = useConvex();
+  // @ts-ignore
   const { query } = useRouter(); // This gives you access to query params
 
   useEffect(() => {
@@ -57,7 +58,7 @@ const Canvas = ({ onSaveTrigger, fileId, fileData }: any) => {
       saveWhiteboard();
     }
   }, [onSaveTrigger, editor, fileId, convex]);
-
+// @ts-ignore
   const handleMount = useCallback((editorInstance) => {
     console.log("TLDraw mounted");
     setEditor(editorInstance);
@@ -69,6 +70,7 @@ const Canvas = ({ onSaveTrigger, fileId, fileData }: any) => {
         onMount={handleMount}
         className="h-full w-full absolute inset-0"
         inferDarkMode={false}
+        // @ts-ignore
         darkMode={false}
         showMenu={true}
         showStyles={true}

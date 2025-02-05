@@ -4,6 +4,7 @@ import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import EditorjsList from '@editorjs/list';
 import Paragraph from '@editorjs/paragraph';
+// @ts-ignore
 import SimpleImage from "@editorjs/simple-image";
 import { useMutation } from 'convex/react';
 import { api } from '@/convex/_generated/api';
@@ -24,6 +25,7 @@ const rawDocument = {
 }
 
 function Editor({ onSaveTrigger, fileId, fileData}: {onSaveTrigger:any, fileId:any,fileData:FILE}) {
+    // @ts-ignore
     const ref = useRef<EditorJS>();
     const updateDocument = useMutation(api.files.updateDocument);
     const [document, setDocument] = useState(rawDocument);
@@ -62,6 +64,7 @@ function Editor({ onSaveTrigger, fileId, fileData}: {onSaveTrigger:any, fileId:a
         const editor = new EditorJS({
             tools: {
                 header: {
+                    // @ts-ignore
                     class: Header,
                     shortcut: 'CMD+SHIFT+H',
                     config: {
@@ -69,6 +72,7 @@ function Editor({ onSaveTrigger, fileId, fileData}: {onSaveTrigger:any, fileId:a
                     }
                 },
                 list: {
+                    // @ts-ignore
                     class: EditorjsList,
                     inlineToolbar: true,
                     config: {
@@ -76,6 +80,7 @@ function Editor({ onSaveTrigger, fileId, fileData}: {onSaveTrigger:any, fileId:a
                     }
                 },
                 paragraph: {
+                    // @ts-ignore
                     class: Paragraph,
                     inlineToolbar: true,
                 },

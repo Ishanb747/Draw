@@ -31,6 +31,7 @@ function Workspace({ params }: WorkspaceProps) {
         try {
             if (!unwrappedParams?.fileid) return;
             const result = await convex.query(api.files.getFileById, {
+                // @ts-ignore
                 _id: unwrappedParams.fileid
             });
             setFileData(result);
